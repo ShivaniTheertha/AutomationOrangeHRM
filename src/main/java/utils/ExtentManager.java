@@ -10,7 +10,7 @@ public class ExtentManager {
     public static ExtentReports getExtent() {
         // Initialize ExtentReports instance
         if (extent == null) {
-            ExtentSparkReporter reporter = new ExtentSparkReporter("target/extent-report.html");
+            ExtentSparkReporter reporter = new ExtentSparkReporter("target/extent-reports/ExtentReport.html");
             reporter.config().setReportName("OrangeHRM Test Report");
             reporter.config().setDocumentTitle("OrangeHRM Automation Report");
 
