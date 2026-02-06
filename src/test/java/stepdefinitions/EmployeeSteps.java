@@ -49,15 +49,15 @@ public class EmployeeSteps {
 
     @And("User modifies the employee details")
     public void user_modifies_the_employee_details() {
-      //  pimPage.selectSearchedEmployee(LastName);
-      //  pimPage.enterMiddleNameInPersonalDetails("A");
+        pimPage.selectSearchedEmployee(LastName);
+        pimPage.enterMiddleNameInPersonalDetails("A");
     }
 
 
     @Then("The employee details should be updated successfully")
     public void the_employee_details_should_be_updated_successfully() {
         // Verification logic can be added here
-        //System.out.println(pimPage.getSuccessMessageText());
+        System.out.println(pimPage.getSuccessMessageText());
     }
 
 

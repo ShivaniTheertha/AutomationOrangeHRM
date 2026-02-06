@@ -17,6 +17,9 @@ public class DashboardPageObjects {
     By myAccountButton = By.xpath("//p[@class='oxd-userdropdown-name']");
     By loginpageVerification = By.xpath("//div[@class='orangehrm-login-slot']/h5[normalize-space()='Login']");
 
+    By spinner= By.className("oxd-loading-spinner");
+    By topbarHeader= By.className("oxd-topbar-header");
+
     public void ClickMyAccountButton () {
         waitutils.waitForElement(driver, DashboardHeader, 10);
         driver.findElement(myAccountButton).click();

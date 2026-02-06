@@ -27,6 +27,10 @@ public class waitutils {
         new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds)).until(ExpectedConditions.presenceOfElementLocated(elementLocator));
     }
 
+    public static void waitForurlToContain(WebDriver driver, String urlFraction, int timeoutInSeconds) {
+        new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds)).until(ExpectedConditions.urlContains(urlFraction));
+    }
+
     public static void waitForLoaderToDisappear(WebDriver driver, By loaderLocator, int timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(loaderLocator));

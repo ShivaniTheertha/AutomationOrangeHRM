@@ -40,9 +40,13 @@ public void clickLoginAfterEnteringCredentials() {
     waitutils.waitForPageToLoad(driver, 10);
    // waitutils.waitForElementToBeClickable(driver, loginButton, 10);
    driver.findElement(loginButton).click();
-       DashboardPageObjects dashboardPage = new DashboardPageObjects(driver);
-       waitutils.waitForElement(driver, dashboardPage.DashboardHeader, 10);
-    waitutils.waitForUIToSettle();
+     DashboardPageObjects dashboardPage = new DashboardPageObjects(driver);
+   waitutils.waitForurlToContain(driver, "dashboard", 10);
+   waitutils.waitForLoaderToDisappear(driver, dashboardPage.spinner, 10);
+   waitutils.waitForElementToBePresent(driver, dashboardPage.topbarHeader, 10);
+
+       //waitutils.waitForElement(driver, dashboardPage.DashboardHeader, 10);
+    //waitutils.waitForUIToSettle();
    // ((JavascriptExecutor)driver).executeScript("arguments[0].click();", loginbutton);
 }
 

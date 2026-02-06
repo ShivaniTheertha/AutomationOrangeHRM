@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.waitutils;
 
 import java.time.Duration;
+import java.util.List;
 
 
 public class AdminPageObjects{
@@ -56,9 +57,31 @@ public class AdminPageObjects{
   @FindBy(xpath="//div[@role='option' and normalize-space()='Enabled']")
   private WebElement StatusEnabledOption;
 
+  By admin= By.xpath("//span[text()='Admin']");
+
   public void clickOnAdminModule() {
-     waitutils.waitForElement(driver,AdminButtonBy,10);
-        AdminButton.click();
+
+      By hamburgerLocator = By.className("oxd-main-menu-button");
+      List<WebElement> hamburger = driver.findElements(hamburgerLocator);
+
+      if (!hamburger.isEmpty() && hamburger.get(0).isDisplayed()) {
+          System.out.println("Sidebar is collapsed. Clicking hamburger menu...");
+          hamburger.get(0).click();
+
+          // Wait for the sidebar to actually expand and show the Admin link
+          waitutils.waitForElementToBePresent(driver,AdminButtonBy,10);
+
+
+      }
+
+// Now proceed with your Admin click
+      waitutils.waitForElementToBeClickable(driver,AdminButtonBy,10);
+      //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Admin']"))).click();
+
+
+
+    // waitutils.waitForElementToBeClickable(driver,AdminButtonBy,10);
+      //  AdminButton.click();
 
   }
 
