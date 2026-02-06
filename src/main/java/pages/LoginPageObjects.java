@@ -26,6 +26,11 @@ By loggedInVerification= By.xpath("//h6[normalize-space()='Dashboard']");
 By invalidCredentialsMessage= By.xpath("//p[contains(@class,'oxd-alert-content-text')]");
 By userNameRequiredMessage= By.xpath("//input[@name='username']/ancestor::div[1]/following-sibling::span");
 By passwordRequiredMessage= By.xpath("//input[@name='password']/ancestor::div[1]/following-sibling::span");
+// By loginpageVerification = By.xpath("//div[@class='orangehrm-login-slot']/h5[normalize-space()='Login']");
+
+public void verifyLoginPage() {
+        waitutils.waitForElement(driver, username, 10);
+    }
 
 
 public void enterUsername(String user) {

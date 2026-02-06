@@ -6,6 +6,7 @@ import flows.loginflows;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.DashboardPageObjects;
+import pages.LoginPageObjects;
 import utils.ConfigReader;
 
 public class LogOutTests extends FreshBrowserBaseTest {
@@ -20,7 +21,8 @@ public class LogOutTests extends FreshBrowserBaseTest {
         DashboardPageObjects dashboardPage = new DashboardPageObjects(driver);
         dashboardPage.ClickMyAccountButton();
         dashboardPage.ClickLogOutButton();
-        dashboardPage.verifyLoginPage();
+        LoginPageObjects loginPage=new pages.LoginPageObjects(driver);
+        loginPage.verifyLoginPage();
     }
 }
 

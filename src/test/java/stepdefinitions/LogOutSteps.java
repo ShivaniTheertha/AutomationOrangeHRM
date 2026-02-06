@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.AdminPageObjects;
 import pages.DashboardPageObjects;
+import pages.LoginPageObjects;
 import utils.ConfigReader;
 
 public class LogOutSteps {
@@ -35,6 +36,7 @@ public class LogOutSteps {
 
     @Then("The user should be redirected to the OrangeHRM login page")
     public void the_user_should_be_redirected_to_the_orange_hrm_login_page() {
-        dashboardPage.verifyLoginPage();
+        LoginPageObjects loginPage = new LoginPageObjects(driver);
+        loginPage.verifyLoginPage();
     }
 }

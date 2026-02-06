@@ -31,8 +31,7 @@ public class LoginSteps{
 
     @Given("the user is on the OrangeHRM login page")
     public void the_user_is_on_the_orange_hrm_login_page() {
-        DashboardPageObjects dashboardPage = new DashboardPageObjects(driver);
-        dashboardPage.verifyLoginPage();
+        loginPage.verifyLoginPage();
     }
 
     @When("the user enters a valid username and password")

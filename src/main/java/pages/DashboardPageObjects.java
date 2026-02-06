@@ -15,7 +15,8 @@ public class DashboardPageObjects {
     By DashboardHeader = By.xpath("//span[@class='oxd-topbar-header-breadcrumb']/h6[normalize-space()='Dashboard']");
     By logOutButton = By.xpath("//ul[@class='oxd-dropdown-menu']/li[normalize-space()='Logout']");
     By myAccountButton = By.xpath("//p[@class='oxd-userdropdown-name']");
-    By loginpageVerification = By.xpath("//div[@class='orangehrm-login-slot']/h5[normalize-space()='Login']");
+
+
 
     By spinner= By.className("oxd-loading-spinner");
     By topbarHeader= By.className("oxd-topbar-header");
@@ -31,10 +32,7 @@ public class DashboardPageObjects {
         driver.findElement(logOutButton).click();
     }
 
-    public void verifyLoginPage() {
-        waitutils.waitForElement(driver, loginpageVerification, 10);
-        driver.findElement(loginpageVerification).isDisplayed();
-    }
+
 
 
 
